@@ -1,5 +1,6 @@
 {
   "python.pythonPath": "/home/insu/.local/share/virtualenvs/airbnb-clone-A61vyRn0/bin/python",
+  "cornflakes.linter.executablePath": "/home/insu/.local/share/virtualenvs/airbnb-clone-A61vyRn0/bin/flake8",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.enabled": true,
