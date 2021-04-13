@@ -10,13 +10,19 @@ class ItemAdmin(admin.ModelAdmin):
 
     list_display = ("name", "used_by")
 
-    def used_by(self,obj):
+    def used_by(self, obj):
         return obj.rooms.count()
+
+class PhotoInline(admin.TabularInline):
+
+    model = models.Photo
 
 @admin.register(models.Room)
 class RoomAdmin(admin.ModelAdmin):
 
     """ Room Admin Definition """
+
+    inlines = (PhotoInline,)
 
     fieldsets = (
         (
@@ -71,6 +77,8 @@ class RoomAdmin(admin.ModelAdmin):
         "city",
         "country",
         )
+
+    raw_id_fields = ("host",)
 
     search_fields = ("=city", "^host__username")
 
